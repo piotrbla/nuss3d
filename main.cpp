@@ -31,7 +31,7 @@ int N=1000;
 #include "li.h"
 #include "byrow.h"
 #include "traceback.h"
-#include "blasz.h"
+#include "3D.h"
 
 
 int main(int argc, char *argv[]){
@@ -95,8 +95,8 @@ int main(int argc, char *argv[]){
        byrow();
 
 
-    if(strcmp(method, "blasz")==0)
-       blasz();
+    if(strcmp(method, "3D")==0)
+       n3D();
 
 
 
