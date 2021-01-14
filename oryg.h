@@ -1,20 +1,14 @@
+#define sigma(i, j) (can_pair(RNA, i, j))
 void oryg(){
+	int n = N;
+	int i,j,k;
 
-int i,j,k;
-
-
-
-    for (i = N-1; i >= 0; i--) {
-     for (j = i+1; j < N; j++) {
-      for (k = 0; k < j-i; k++) {
-        S[i][j] = max(S[i][k+i] + S[k+i+1][j], S[i][j]);
-      }
-      for (k = 0; k < 1; k++) {
-       S[i][j] = max(S[i][j], S[i+1][j-1]  + can_pair(RNA, i, j));
-
-     }
-    }
-   }
-
-
+	for ( i = n-1; i >= 0; i--) {
+	   for (j = i + 1; j < n; j++) {
+		 for (k = i; k < j ; k++) {
+		   S[i][j]=max(S[i][k] + S[k + 1][j], S[i][j]); // s1
+		 }
+		 S[i][j]=max(S[i][j], S[i+1][j-1]+sigma(i,j)); // s2
+	   }
+	}
 }
