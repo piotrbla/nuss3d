@@ -1,2 +1,2 @@
 # nuss3d
-Different vesrsions of Nussinov's algorithm.
+Different versions of Nussinov's algorithm.
